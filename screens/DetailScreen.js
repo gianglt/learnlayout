@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { Button, View, Text, ListView, StyleSheet,Image,FlatList } from 'react-native';
+import { Button, View, Text, ListView, StyleSheet,Image,FlatList} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { ListItem, SearchBar } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import ListPhotoPaging from '../screens/ListPhotoPaging.js'
 
 export default class  DetailScreen extends React.Component  {  
 

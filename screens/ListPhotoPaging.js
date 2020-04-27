@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, Text, ListView, StyleSheet,Image,FlatList } from 'react-native';
+import { Button, View, Text, ListView, StyleSheet,Image,FlatList, SafeAreaView  } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { ListItem, SearchBar } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -76,14 +76,14 @@ export default class ListPhotoPaging extends React.Component {
 
     render() {
         return (
-            <ScrollView>
+            <SafeAreaView>
                 <FlatList
                     data={this.state.data}
                     renderItem={({ item }) => this.renderNativeItem(item)}
                     keyExtractor={item => item.email}
                     ItemSeparatorComponent={this.renderSeparator}
                 />
-            </ScrollView>          
+            </SafeAreaView>          
         );
     }
 
