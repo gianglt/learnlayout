@@ -13,7 +13,9 @@ export default class ListPhoto extends React.Component {
         this.arrayholder = [];
     }
 
-
+    static navigationOptions = {
+        title: 'Paging List',
+      };
 
     renderNativeItem  = (item) => {
         return (
@@ -21,12 +23,9 @@ export default class ListPhoto extends React.Component {
                 leftAvatar={{source:{uri:item.thumbnailUrl}}}
                 title={item.title}
                 subtitle={item.thumbnailUrl}
-                
             />
         )
-        
     }
-
 
     renderSeparator = () => {
         return (    
@@ -43,7 +42,8 @@ export default class ListPhoto extends React.Component {
     componentDidMount()
     {
         this.setState({ isLoading: true });
-        fetch('https://jsonplaceholder.typicode.com/photos')
+        const url = 'https://jsonplaceholder.typicode.com/photos';
+        fetch(url)
             .then(response => response.json())
             .then(responseJson => {
                 this.setState({ 
