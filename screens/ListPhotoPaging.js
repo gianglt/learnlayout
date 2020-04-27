@@ -76,19 +76,14 @@ export default class ListPhotoPaging extends React.Component {
 
     render() {
         return (
-            <View>
+            <ScrollView>
                 <FlatList
                     data={this.state.data}
                     renderItem={({ item }) => this.renderNativeItem(item)}
                     keyExtractor={item => item.email}
                     ItemSeparatorComponent={this.renderSeparator}
                 />
-
-                <Button
-                    title="Go Detail"
-                    onPress={() => this.props.navigation.navigate('DetailScreen', { source: "ListPhotoPaging" })}
-                />
-            </View>          
+            </ScrollView>          
         );
     }
 

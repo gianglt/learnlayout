@@ -8,7 +8,9 @@ import ListPhotoPaging from '../screens/ListPhotoPaging.js'
 
 export default class  DetailScreen extends React.Component  {  
 
-    goHome = () => {
+    goHome = (item) => {
+        const email = item.email;
+        console.log("Get out from item: " + item.email);
         this.props.navigation.navigate('ListPhotoPaging');
       };
       
@@ -32,7 +34,7 @@ export default class  DetailScreen extends React.Component  {
           <Text  style={styles.text}>{email}</Text>
           
           <Button title="Home" 
-            onPress={()=>this.goHome} 
+            onPress={()=>this.goHome(item)} 
           />
         </View>
       );
